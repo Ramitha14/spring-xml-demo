@@ -14,23 +14,43 @@ public class Main {
     public static void main(String args[])
     {
         ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie=context.getBean("movie",Movie.class);
-        movie.display();
+        Movie movieA=context.getBean("movieA",Movie.class);
+        movieA.display();
 
-        BeanFactory factory=new ClassPathXmlApplicationContext("beans.xml");
-        movie=factory.getBean("movie",Movie.class);
-        movie.display();
+        Movie movieB=context.getBean("movieB",Movie.class);
+        movieB.display();
 
-        DefaultListableBeanFactory beanFactory=new DefaultListableBeanFactory();
-        BeanDefinitionReader reader=new XmlBeanDefinitionReader(beanFactory);
-        reader.loadBeanDefinitions(new FileSystemResource("src/main/resources/beans.xml"));
-        Movie movie1=(Movie)beanFactory.getBean("movie");
-        movie1.display();
+        Movie movieC=context.getBean("movieC",Movie.class);
+        movieC.display();
 
-        BeanDefinitionRegistry beanDefinitionRegistry=new DefaultListableBeanFactory();
-        BeanDefinitionReader beanDefinitionReader=new XmlBeanDefinitionReader(beanDefinitionRegistry);
-        beanDefinitionReader.loadBeanDefinitions(new FileSystemResource("src/main/resources/beans.xml"));
-        Movie moviebean1=(Movie)beanFactory.getBean("movie");
-        moviebean1.display();
+        Movie movieD=context.getBean("movieD",Movie.class);
+        movieD.display();
+
+        Movie movieE=context.getBean("movieE",Movie.class);
+        movieE.display();
+
+        Movie movieF=context.getBean("movieF",Movie.class);
+        movieF.display();
+
+        Movie movie4=context.getBean("movieE",Movie.class);
+        System.out.println(movieE==movie4);
+
+
+
+//        BeanFactory factory=new ClassPathXmlApplicationContext("beans.xml");
+//        movie=factory.getBean("movie",Movie.class);
+//        movie.display();
+
+//        DefaultListableBeanFactory beanFactory=new DefaultListableBeanFactory();
+//        BeanDefinitionReader reader=new XmlBeanDefinitionReader(beanFactory);
+//        reader.loadBeanDefinitions(new FileSystemResource("src/main/resources/beans.xml"));
+//        Movie movie1=(Movie)beanFactory.getBean("movie");
+//        movie1.display();
+//
+//        BeanDefinitionRegistry beanDefinitionRegistry=new DefaultListableBeanFactory();
+//        BeanDefinitionReader beanDefinitionReader=new XmlBeanDefinitionReader(beanDefinitionRegistry);
+//        beanDefinitionReader.loadBeanDefinitions(new FileSystemResource("src/main/resources/beans.xml"));
+//        Movie moviebean1=(Movie)beanFactory.getBean("movie");
+//        moviebean1.display();
     }
 }
