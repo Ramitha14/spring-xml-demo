@@ -1,7 +1,23 @@
 package com.stackroute.domain;
 
-public class Movie {
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Movie implements BeanFactoryAware, ApplicationContextAware, BeanNameAware {
     private Actor actor;
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException{
+        System.out.println("BeanFactoryAware is implemented");
+    }
+    public void  setBeanName(String str){
+        System.out.println("Bean name is implemented");
+    }
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException{
+        System.out.println("ApplicationcontextAware is implemented");
+    }
 
     public Movie(){}
     public Movie(Actor actor) {
