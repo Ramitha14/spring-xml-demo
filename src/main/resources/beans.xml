@@ -8,10 +8,10 @@
         <property name="age" value="30"></property>
     </bean>
 
-    <bean id="movie1" class="com.stackroute.domain.Movie" autowire="byName"/>
+    <bean id="movie" class="com.stackroute.domain.Movie" autowire="byName"/>
     <bean id="movie2" class="com.stackroute.domain.Movie" autowire="byType"/>
     <bean id="movie3" class="com.stackroute.domain.Movie" autowire="constructor"/>
 
     <bean id="lifecycle" class=" com.stackroute.demo.BeanLifecycleDemoBean" init-method="custominit" destroy-method="customDestroy"/>
-
+    <bean id="postprocessor" class="com.stackroute.demo.BeanPostProcessorDemoBean" init-method="" destroy-method=""/>
 </beans>
