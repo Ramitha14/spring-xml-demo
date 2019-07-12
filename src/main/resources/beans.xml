@@ -2,30 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean name="movieA,movieB" class="com.stackroute.domain.Movie" scope="prototype">
-        <constructor-arg name="actor" ref="actor1"></constructor-arg>
-    </bean>
-    <bean name="movieC,movieD" class="com.stackroute.domain.Movie" scope="prototype">
-        <constructor-arg name="actor" ref="actor2"></constructor-arg>
-    </bean>
-    <bean name="movieE,movieF" class="com.stackroute.domain.Movie" scope="prototype">
-        <constructor-arg name="actor" ref="actor3"></constructor-arg>
+    <bean id="actor" class="com.stackroute.domain.Actor">
+        <property name="name" value="Ram"></property>
+        <property name="gender" value="Male"></property>
+        <property name="age" value="30"></property>
     </bean>
 
+    <bean id="movie1" class="com.stackroute.domain.Movie" autowire="byName"/>
+    <bean id="movie2" class="com.stackroute.domain.Movie" autowire="byType"/>
+    <bean id="movie3" class="com.stackroute.domain.Movie" autowire="constructor"/>
 
-    <bean id="actor1" class="com.stackroute.domain.Actor">
-        <constructor-arg name="name" value="Ram" type="String"/>
-        <constructor-arg name="gender" value="Male" type="String"/>
-        <constructor-arg name="age" value="21" type="int"/>
-    </bean>
-    <bean id="actor2" class="com.stackroute.domain.Actor">
-        <constructor-arg name="name" value="Subi" type="String"/>
-        <constructor-arg name="gender" value="Female" type="String"/>
-        <constructor-arg name="age" value="22" type="int"/>
-    </bean>
-    <bean id="actor3" class="com.stackroute.domain.Actor">
-        <constructor-arg name="name" value="Surya" type="String"/>
-        <constructor-arg name="gender" value="Male" type="String"/>
-        <constructor-arg name="age" value="28" type="int"/>
-    </bean>
 </beans>
