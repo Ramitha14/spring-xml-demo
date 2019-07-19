@@ -2,8 +2,9 @@ package com.stackroute.domain;
 
 public class Movie {
     private Actor actor;
-
+//creating empty constructor
     public Movie(){}
+ //creating parameterized constructor
     public Movie(Actor actor) {
         this.actor = actor;
     }

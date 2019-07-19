@@ -4,15 +4,15 @@ public class Actor {
     private String name;
     private String gender;
     private int age;
-
+//creating default constructor
     public Actor(){}
-
+//creating parameterized constructor
     public Actor(String name, String gender, int age) {
         this.name = name;
         this.gender = gender;
         this.age = age;
     }
-
+//getters and setters
     public String getName() {
         return name;
     }
