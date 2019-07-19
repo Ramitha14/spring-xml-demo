@@ -18,8 +18,9 @@ public class Movie implements BeanFactoryAware, ApplicationContextAware, BeanNam
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException{
         System.out.println("ApplicationcontextAware is implemented");
     }
-
+//default constructor
     public Movie(){}
+ //parameterized constructor
     public Movie(Actor actor) {
         this.actor = actor;
     }

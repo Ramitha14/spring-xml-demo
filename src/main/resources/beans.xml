@@ -2,12 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--created bean for actor class-->
+
     <bean id="actor" class="com.stackroute.domain.Actor">
         <property name="name" value="Ram"></property>
         <property name="gender" value="Male"></property>
         <property name="age" value="30"></property>
     </bean>
-
+    <!--created bean for movie class using autowire-->
     <bean id="movie1" class="com.stackroute.domain.Movie" autowire="byName"/>
     <bean id="movie2" class="com.stackroute.domain.Movie" autowire="byType"/>
     <bean id="movie3" class="com.stackroute.domain.Movie" autowire="constructor"/>
